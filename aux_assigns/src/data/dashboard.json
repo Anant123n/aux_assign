@@ -1,0 +1,124 @@
+{
+  "appName": "CNAPP Dashboard",
+  "categories": [
+    {
+      "id": "cspm",
+      "name": "CSPM Executive Dashboard",
+      "shortName": "CSPM",
+      "widgets": [
+        {
+          "id": "cloud-accounts",
+          "title": "Cloud Accounts",
+          "description": "Overview of connected cloud accounts.",
+          "type": "donut",
+          "enabled": true,
+          "centerValue": "2",
+          "centerLabel": "Total",
+          "segments": [
+            { "label": "Connected", "value": 2, "color": "#4f6df5" },
+            { "label": "Not connected", "value": 2, "color": "#dce3ff" }
+          ]
+        },
+        {
+          "id": "cloud-risk-assessment",
+          "title": "Cloud Account Risk Assessment",
+          "description": "Assessment status across monitored cloud resources.",
+          "type": "donut",
+          "enabled": true,
+          "centerValue": "9,659",
+          "centerLabel": "Total",
+          "segments": [
+            { "label": "Failed", "value": 1689, "color": "#dc2626" },
+            { "label": "Warning", "value": 681, "color": "#f6c344" },
+            { "label": "Not available", "value": 36, "color": "#94a3b8" },
+            { "label": "Passed", "value": 7253, "color": "#16a34a" }
+          ]
+        },
+        {
+          "id": "compliance-score",
+          "title": "Compliance Score",
+          "description": "Current compliance posture across active policies.",
+          "type": "text",
+          "enabled": false,
+          "text": "Your cloud environment is 82% compliant across all active policies."
+        }
+      ]
+    },
+    {
+      "id": "cwpp",
+      "name": "CWPP Dashboard",
+      "shortName": "CWPP",
+      "widgets": [
+        {
+          "id": "namespace-alerts",
+          "title": "Top 5 Namespace Specific Alerts",
+          "description": "Namespace alert activity for the selected period.",
+          "type": "empty",
+          "enabled": true,
+          "text": "No graph data available!"
+        },
+        {
+          "id": "workload-alerts",
+          "title": "Workload Alerts",
+          "description": "Workload alert activity for the selected period.",
+          "type": "empty",
+          "enabled": true,
+          "text": "No graph data available!"
+        },
+        {
+          "id": "runtime-protection",
+          "title": "Runtime Protection",
+          "description": "Protection coverage for active workloads.",
+          "type": "text",
+          "enabled": false,
+          "text": "Runtime protection is enabled for 74 of 81 workloads."
+        }
+      ]
+    },
+    {
+      "id": "registry",
+      "name": "Registry Scan",
+      "shortName": "Image",
+      "widgets": [
+        {
+          "id": "image-risk-assessment",
+          "title": "Image Risk Assessment",
+          "description": "Vulnerabilities detected in registry images.",
+          "type": "risk",
+          "enabled": true,
+          "total": 1470,
+          "totalLabel": "Total vulnerabilities",
+          "segments": [
+            { "label": "Critical", "value": 9, "color": "#b42318" },
+            { "label": "High", "value": 150, "color": "#e04435" },
+            { "label": "Medium", "value": 620, "color": "#f3a737" },
+            { "label": "Low", "value": 691, "color": "#f4d35e" }
+          ]
+        },
+        {
+          "id": "image-security-issues",
+          "title": "Image Security Issues",
+          "description": "Security issues found during image scans.",
+          "type": "risk",
+          "enabled": true,
+          "total": 2,
+          "totalLabel": "Total images",
+          "segments": [
+            { "label": "Critical", "value": 2, "color": "#8f1d14" },
+            { "label": "High", "value": 2, "color": "#e04435" },
+            { "label": "Medium", "value": 1, "color": "#f3a737" },
+            { "label": "Low", "value": 1, "color": "#f4d35e" }
+          ]
+        },
+        {
+          "id": "scan-coverage",
+          "title": "Registry Scan Coverage",
+          "description": "Image scanning coverage across connected registries.",
+          "type": "text",
+          "enabled": false,
+          "text": "Image scanning is active on all 6 connected registries."
+        }
+      ]
+    }
+  ]
+}

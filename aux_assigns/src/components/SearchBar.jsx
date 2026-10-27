@@ -1,15 +1,21 @@
-import React from "react";
+import { Search, X } from "lucide-react";
 
-export default function SearchBar({ searchTerm, setSearchTerm }) {
+export default function SearchBar({ value, onChange }) {
   return (
-    <div className="mb-6">
+    <label className="search-bar">
+      <span className="sr-only">Search all widgets</span>
+      <Search size={16} aria-hidden="true" />
       <input
-        type="text"
-        placeholder="Search widgets..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full px-4 py-2 rounded-lg border focus:ring focus:ring-blue-300"
+        type="search"
+        placeholder="Search all widgets..."
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
       />
-    </div>
+      {value && (
+        <button type="button" aria-label="Clear search" onClick={() => onChange("")}>
+          <X size={15} aria-hidden="true" />
+        </button>
+      )}
+    </label>
   );
 }

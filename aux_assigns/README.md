@@ -1,16 +1,45 @@
-# React + Vite
+# CNAPP Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, data-driven cloud security dashboard built for the frontend trainee assignment. Categories and widgets are defined in JSON, while Redux Toolkit manages widget visibility, custom widgets, search, filters, and UI state. Dashboard changes persist in `localStorage`.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Dynamic category and widget rendering from `src/data/dashboard.json`
+- Redux Toolkit state management with local persistence
+- Add custom widgets with a name and text
+- Remove widgets directly from a card
+- Enable or disable any widget from the category drawer
+- Search across every active widget
+- Responsive desktop, tablet, and mobile layout
+- Accessible controls, keyboard focus states, and reduced-motion support
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Requirements: Node.js 20.19+ or 22.12+ and npm.
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Open the local URL printed by Vite, normally `http://localhost:5173`.
+
+## Quality checks
+
+```bash
+npm run lint
+npm run build
+npm run preview
+```
+
+## Project structure
+
+```text
+src/
+  components/       Dashboard UI and widget drawer
+  data/             JSON dashboard configuration
+  store/            Redux slice and store configuration
+  utils/            Safe localStorage helpers
+  App.jsx            Dashboard composition
+  index.css          Responsive visual system
+```
